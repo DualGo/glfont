@@ -2,15 +2,16 @@ package glfont
 
 import (
 	"fmt"
-	"github.com/go-gl/gl/all-core/gl"
-	"github.com/golang/freetype"
-	"github.com/golang/freetype/truetype"
-	"golang.org/x/image/font"
-	"golang.org/x/image/math/fixed"
 	"image"
 	"image/draw"
 	"io"
 	"io/ioutil"
+
+	"github.com/DualGo/gl/v4.1-core/gl"
+	"github.com/golang/freetype"
+	"github.com/golang/freetype/truetype"
+	"golang.org/x/image/font"
+	"golang.org/x/image/math/fixed"
 )
 
 type character struct {
@@ -146,6 +147,7 @@ func LoadTrueTypeFont(program uint32, r io.Reader, scale int32, low, high rune, 
 
 	gl.BindBuffer(gl.ARRAY_BUFFER, 0)
 	gl.BindVertexArray(0)
+	gl.UseProgram(0)
 
 	return f, nil
 }

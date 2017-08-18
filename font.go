@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/go-gl/gl/all-core/gl"
+	"github.com/DualGo/gl/v4.1-core/gl"
 )
 
 // Direction represents the direction in which strings should be rendered.
@@ -68,7 +68,6 @@ func (f *Font) SetColor(red float32, green float32, blue float32, alpha float32)
 
 //Printf draws a string to the screen, takes a list of arguments like printf
 func (f *Font) Printf(x, y float32, scale float32, fs string, argv ...interface{}) error {
-
 	indices := []rune(fmt.Sprintf(fs, argv...))
 
 	if len(indices) == 0 {
